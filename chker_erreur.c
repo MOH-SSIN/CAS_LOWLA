@@ -13,15 +13,7 @@ int ft_vide_space(char *str)
     return 1;
 }
 
-void liberer_erreurs(char **split)
-{
-    int i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
-    write(1,"Erreur!\n",8);
-    exit(1);
-}
+
 // fonction Parse_ArgEnd_Init_a 
 static int verifier_syntaxe(char *str)
 {
@@ -63,11 +55,33 @@ static int verfier_doubl(char **str, int nbr)
         return (1);
 }
 
+
+// static void afficher_pile_str(t_noeud *pile)
+// {
+//     t_noeud *tmp;
+
+//     if (!pile)
+//     {
+//         printf("Pileest vide.\n");
+//         return;
+//     }
+//     printf("pile: \n");
+//     tmp = pile;
+//     printf("->");
+//     while (tmp)
+//     {
+//         printf("adreese =%p\tvaleur = %d\tlength = %d\tsub = %d\t\tindice = %d\tappartien = %d\n", tmp,tmp->valeur,tmp->length,tmp->sub,tmp->indice,tmp->appartient);
+//         if (tmp->suivant)
+//             printf("->");
+//         tmp = tmp->suivant;
+//     }
+//     printf("fin pile: \n");
+// }
+
 void Parse_ArgEnd_Init_a(t_noeud **a, t_noeud **b, char **args)
 {
     int     i;
     long    nombre;
-    // int j = -1;
 
     nombre = 0;
     i = 0;
@@ -84,7 +98,18 @@ void Parse_ArgEnd_Init_a(t_noeud **a, t_noeud **b, char **args)
             liberer_erreurs(args);
         i++;
     }
-    // while (args[++j])
-    //     printf("args[%d] = %s \n",j,args[j]);
-    // ajouter_noeud(a, args);
+    *a = ajouter_noeud(args);
+    // afficher_pile(*a);
+    // printf("***************************\n");
+    // exit(0);
+    if (pile_taile(*a) <= 3)
+        case_ptit_piles(a,b);
+    // afficher_pile(*a);
+    // printf("***************************\n");
+    else
+        case_grand_pile(a,b);
+    // afficher_pile_str(*a);
+    // printf("***************************\n");
+	// printf("fint programme \n");
+	// exit(0);
 }

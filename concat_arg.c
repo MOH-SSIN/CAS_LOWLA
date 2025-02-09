@@ -6,26 +6,12 @@
 /*   By: mez-zahi <mez-zahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 19:31:52 by mez-zahi          #+#    #+#             */
-/*   Updated: 2025/02/08 16:07:33 by mez-zahi         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:26:16 by mez-zahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
-
-static void	fr_single(char **s1, char **s2)
-{
-	if (*s1)
-	{
-		free(*s1);
-		*s1 = NULL;
-	}
-	if (*s2)
-	{
-		free(*s2);
-		*s2 = NULL;
-	}
-}
 
 char	**concat_arg(int ac, char *av[])
 {
