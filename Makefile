@@ -6,7 +6,7 @@
 #    By: mez-zahi <mez-zahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 14:30:14 by mez-zahi          #+#    #+#              #
-#    Updated: 2025/02/09 17:10:04 by mez-zahi         ###   ########.fr        #
+#    Updated: 2025/02/10 09:35:22 by mez-zahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = push_swap.c chker_erreur.c concat_arg.c\
 	case_grand_pile.c \
 	init_pile.c\
 	move_pile.c \
-	
+
 OBJ = $(SRC:.c=.o)
 
 # CFLAGS = -Wall -Wextra -Werror

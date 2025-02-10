@@ -18,8 +18,7 @@ void push_non_list(t_noeud **a, t_noeud**b)
 
     while (is_true(*a))
     {
-        set_moins_cher(*a);
-        tmp = *a;
+        set_index(*a);
         tmp = *a;
         if ((tmp)->appartient)
             ra(a, false);
@@ -29,7 +28,8 @@ void push_non_list(t_noeud **a, t_noeud**b)
     }
 }
 
-static  t_noeud*ft_Get_PtitdNode(t_noeud *a)
+
+t_noeud *ft_Get_PtitdNode(t_noeud *a)//5asni ndirha machi statick
 {
     t_noeud *ptit_valeur;
     
@@ -45,22 +45,42 @@ static  t_noeud*ft_Get_PtitdNode(t_noeud *a)
     return (ptit_valeur);
 }
 
+void	set_index(t_noeud *pile)
+{
+	int	i;
+	int	centerline;
+
+	i = 0;
+	if (NULL == pile)
+		return ;
+	centerline = pile_taile(pile) / 2;
+	while (pile)
+	{
+		pile->indice = i;
+		if (i <= centerline)
+			pile->au_dessus_median = true;
+		else
+			pile->au_dessus_median = false;
+		pile = pile->suivant;
+		++i;
+	}
+}
+
 void case_grand_pile(t_noeud **a,t_noeud **b)
 {
     t_noeud *ptit;
-    // afficher_sub_ptr(*a);
     push_non_list(a,b);
     while (*b)
     {
-        init_pile(a,b);
-        move_b_vers_a(a,b);
+        init_pile(*a ,*b);
+        move_b_vers_a(a, b);
     }
+    set_index(*a);// kina f fichier case_grand_pile
     ptit = ft_Get_PtitdNode(*a);
     if (ptit->au_dessus_median)
-        while (ptit->indice)
+        while (*a != ptit)
             ra(a, false);
     else
-        while (ptit->indice)
+        while (*a != ptit)
             rra(a, false);
-    // afficher_sub_ptr(*a);
 }

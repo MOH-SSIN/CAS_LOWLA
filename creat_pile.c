@@ -11,6 +11,8 @@ t_noeud *lstnew(char *args, int indice)
     new->indice = indice;
     new->valeur = ft_atoi(args);
     new->length = 1;
+    new->sub =-1;
+    new->sub_ptr =NULL;
     new->appartient = false;
     new->noeud_cible = NULL;
     new->suivant = NULL;
@@ -64,7 +66,12 @@ t_noeud *ajouter_noeud(char **args)
         free_pile(pile);
         exit(0);
     }
+    // printf("hhh\n");
+    // printf("***************************\n");
+    // afficher_pile(pile);
+    // printf("***************************\n");
     ft_lis(&pile);
+    // printf("apres_ft_lis\n");
     liberer_erreurs(args);
     return (pile);
 }

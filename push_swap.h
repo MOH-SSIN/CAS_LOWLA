@@ -6,7 +6,7 @@
 /*   By: mez-zahi <mez-zahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:30:09 by mez-zahi          #+#    #+#             */
-/*   Updated: 2025/02/09 17:01:20 by mez-zahi         ###   ########.fr       */
+/*   Updated: 2025/02/10 09:48:45 by mez-zahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,20 @@ void case_ptit_piles(t_noeud **a, t_noeud **b);
 
 //case_grand_pile.c
 void case_grand_pile(t_noeud **a, t_noeud **b);
-
+void	set_index(t_noeud *pile);
 // lis
 void ft_lis(t_noeud **a);
 
 //case_grand_pile.c 
 void push_non_list(t_noeud **a, t_noeud**b);
-
+t_noeud *ft_Get_PtitdNode(t_noeud *a); 
 
 //init_pile.c
 void    set_moins_cher(t_noeud *pile);
-void init_pile(t_noeud **a, t_noeud **b);
+void init_pile(t_noeud *a, t_noeud *b);
 
+//move_pile
+void move_b_vers_a(t_noeud **a, t_noeud **b);
 
 
 

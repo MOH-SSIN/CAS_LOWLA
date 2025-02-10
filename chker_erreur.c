@@ -99,8 +99,11 @@ void Parse_ArgEnd_Init_a(t_noeud **a, t_noeud **b, char **args)
         i++;
     }
     *a = ajouter_noeud(args);
+    // printf("***************************\n");
     // afficher_pile(*a);
     // printf("***************************\n");
+    // printf("lakahre\n");
+    // exit(0);
     // exit(0);
     if (pile_taile(*a) <= 3)
         case_ptit_piles(a,b);
